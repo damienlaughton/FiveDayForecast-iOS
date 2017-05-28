@@ -10,11 +10,8 @@ import Foundation
 
 extension APIManagerSingleton {
   
-<<<<<<< HEAD
   func performFiveDayForecast(cityName: String, countryCode: String = "GB", completion: @escaping APICompletionHandler) {
-=======
-  func performFiveDayForecast(cityName: String, countryCode: String = "UK", completion: @escaping APICompletionHandler) {
->>>>>>> b2938fa3d1fb23ce11bcee6692a948e2757ee120
+
   
     let query: String = "forecast?q=\(cityName),\(countryCode)"
     
