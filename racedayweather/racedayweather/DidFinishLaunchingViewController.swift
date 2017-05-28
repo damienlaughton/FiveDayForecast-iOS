@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DidFinishLaunchingViewController.swift
 //  racedayweather
 //
 //  Created by Damien Laughton on 28/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DidFinishLaunchingViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
