@@ -11,6 +11,10 @@ import Foundation
 
 @IBDesignable class UIWeatherReportView: UIView {
 
+  func configure(forecast: [Forecast]) {
+    
+  }
+
   func configure() {
     self.backgroundColor = UIColor.red
   }

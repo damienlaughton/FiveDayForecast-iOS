@@ -9,14 +9,30 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "racedayweather/racedayweather/DidFinishLaunchingViewController.swift"
-            timestampString = "517659345.293957"
+            filePath = "APIManagerSingleton.swift"
+            timestampString = "517659557.414213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "performRequest(url:httpMethod:httpBodyParameters:headerParameters:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApplicationDataManager.swift"
+            timestampString = "517663366.761209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "latestWeatherForSantaPod"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "APIManagerSingleton.swift"
-            timestampString = "517659557.414213"
+            filePath = "racedayweather/racedayweather/DidFinishLaunchingViewController.swift"
+            timestampString = "517663359.846077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "performRequest(url:httpMethod:httpBodyParameters:headerParameters:completion:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "respondToWeatherInformationUpdated(note:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

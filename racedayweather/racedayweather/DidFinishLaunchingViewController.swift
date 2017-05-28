@@ -17,32 +17,18 @@ class DidFinishLaunchingViewController: RootViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    APIManagerSingleton.sharedInstance.performFiveDayForecast(cityName: "Podington") { [unowned self] data, response, error in
-      DispatchQueue.main.async {
-      
-        print("\(self)")
-        let validStatusCode = response?.isValidStatusCode() ?? false
-        
-        if (nil != error) {
-          //error clause
-          print(error)
-        } else if (false == validStatusCode) {
-          // invalid server status
-        } else {
-          //we're good
-          
-          guard let json = data?.json() else { return }
-          
-          print(json)
-          
-        }
-      }
-    }
+    NotificationCenter.default.addObserver(self, selector: #selector(respondToWeatherInformationUpdated), name: .WeatherInformationUpdated, object: nil)
 
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
   
   override func configure() {
     super.configure()
+    
+    self.weatherReportView.configure(forecast: ApplicationDataManager.sharedInstance.VM_latestWeatherForSantaPad)
     
     self.preConfigureViews()
     
@@ -51,6 +37,15 @@ class DidFinishLaunchingViewController: RootViewController {
         self.showPageControl()
       })
     })
+  }
+  
+  @objc private func respondToWeatherInformationUpdated(note: NSNotification) {
+  
+    if let newForecast = note.object as? [Forecast] {
+      self.weatherReportView.configure(forecast: newForecast)
+    } else {
+       self.weatherReportView.configure(forecast: ApplicationDataManager.sharedInstance.VM_latestWeatherForSantaPad)
+    }
   }
   
   func preConfigureViews() {
