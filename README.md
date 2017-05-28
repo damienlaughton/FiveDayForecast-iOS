@@ -24,6 +24,6 @@ This application should build in XCode without any additional effort on behalf o
 
 # Next Steps for this app
 
-It's all very well having a generic application however if I were to release a weather application I would target it specifically, for instance. A weather app for UK surfers which specifically is tailored for what the surfer would want to know for known surfing locations. Hence why I decided to style this test around the race day weather at Santa Pod.
+It's all very well having a generic application however if I were to release a weather application I would target it specifically, for instance. A weather app for UK surfers which specifically is tailored for what the surfer would want to know for known surfing locations. For the purposes of this test instead of choosing my house or the palace of Westminster I chose Santa Pod so that the app has focus!
 
 Obviously in this particular applications' case being able to choose a location would be of the most immediate benefit.
