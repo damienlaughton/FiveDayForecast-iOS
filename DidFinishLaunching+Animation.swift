@@ -20,7 +20,7 @@ extension DidFinishLaunchingViewController {
       return
     }
     
-    UIView.animate(withDuration:0.3, delay: 0.0, options: .curveEaseInOut,
+    UIView.animate(withDuration:1.0, delay: 0.0, options: .curveEaseInOut,
                    animations: {
                     fivedayForecastLogoImageView.alpha = 0.0
     },

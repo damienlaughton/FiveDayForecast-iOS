@@ -28,7 +28,7 @@ protocol UIWeatherReportViewDelegate: class {
   }
 
   func configure() {
-    self.backgroundColor = UIColor.red
+    
   }
   
   override init (frame : CGRect) {
@@ -49,7 +49,8 @@ protocol UIWeatherReportViewDelegate: class {
   
   override func draw(_ rect: CGRect) {
     super.draw(rect)
-    
+
+// If I do stuff here I may have to remove it before redrawing it
 //    for v in self.subviews {
 //      v.removeFromSuperview()
 //    }
