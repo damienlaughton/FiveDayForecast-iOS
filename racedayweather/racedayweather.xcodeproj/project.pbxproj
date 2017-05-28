@@ -24,6 +24,8 @@
 		6DF57D971EDAE17E002AA1CC /* ApplicationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D961EDAE17E002AA1CC /* ApplicationDataManager.swift */; };
 		6DF57D991EDAE46F002AA1CC /* Notification.RaceDayWeatherNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D981EDAE46F002AA1CC /* Notification.RaceDayWeatherNotifications.swift */; };
 		6DF57D9C1EDAE6B4002AA1CC /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D9B1EDAE6B4002AA1CC /* Forecast.swift */; };
+		6DF57D9F1EDB0952002AA1CC /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D9E1EDB0952002AA1CC /* ForecastCell.swift */; };
+		6DF57DA11EDB10E3002AA1CC /* DateManagerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57DA01EDB10E3002AA1CC /* DateManagerSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		6DF57D961EDAE17E002AA1CC /* ApplicationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDataManager.swift; sourceTree = "<group>"; };
 		6DF57D981EDAE46F002AA1CC /* Notification.RaceDayWeatherNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.RaceDayWeatherNotifications.swift; sourceTree = "<group>"; };
 		6DF57D9B1EDAE6B4002AA1CC /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		6DF57D9E1EDB0952002AA1CC /* ForecastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		6DF57DA01EDB10E3002AA1CC /* DateManagerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManagerSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		6DF57D531EDAB254002AA1CC = {
 			isa = PBXGroup;
 			children = (
+				6DF57D9D1EDB0938002AA1CC /* Cells */,
 				6DF57D9A1EDAE699002AA1CC /* Structs */,
 				6DF57D911EDAD60C002AA1CC /* Extensions */,
 				6DF57D8C1EDACDCB002AA1CC /* Singletons */,
@@ -174,6 +179,7 @@
 				6DF57D8D1EDACE12002AA1CC /* APIManagerSingleton.swift */,
 				6DF57D8F1EDAD16B002AA1CC /* APIManagerSingleton+FiveDayForecast.swift */,
 				6DF57D961EDAE17E002AA1CC /* ApplicationDataManager.swift */,
+				6DF57DA01EDB10E3002AA1CC /* DateManagerSingleton.swift */,
 			);
 			name = Singletons;
 			path = ..;
@@ -195,6 +201,14 @@
 				6DF57D9B1EDAE6B4002AA1CC /* Forecast.swift */,
 			);
 			name = Structs;
+			sourceTree = "<group>";
+		};
+		6DF57D9D1EDB0938002AA1CC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6DF57D9E1EDB0952002AA1CC /* ForecastCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +320,7 @@
 				6DF57D991EDAE46F002AA1CC /* Notification.RaceDayWeatherNotifications.swift in Sources */,
 				6DF57D621EDAB254002AA1CC /* DidFinishLaunchingViewController.swift in Sources */,
 				6DF57D951EDAD849002AA1CC /* Data+JSON.swift in Sources */,
+				6DF57D9F1EDB0952002AA1CC /* ForecastCell.swift in Sources */,
 				6DF57D601EDAB254002AA1CC /* AppDelegate.swift in Sources */,
 				6DF57D831EDABD54002AA1CC /* RootViewController.swift in Sources */,
 				6DF57D8E1EDACE12002AA1CC /* APIManagerSingleton.swift in Sources */,
@@ -315,6 +330,7 @@
 				6DF57D891EDAC534002AA1CC /* UIWeatherReportView.swift in Sources */,
 				6DF57D901EDAD16B002AA1CC /* APIManagerSingleton+FiveDayForecast.swift in Sources */,
 				6DF57D851EDABEDB002AA1CC /* GlobalDefinitions.swift in Sources */,
+				6DF57DA11EDB10E3002AA1CC /* DateManagerSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,15 @@
 import UIKit
 import Foundation
 
-@IBDesignable class UIWeatherReportView: UIView {
+@IBDesignable class UIWeatherReportView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+  @IBOutlet weak var collectionView: UICollectionView!
+
+  var forecast:[Forecast] = []
 
   func configure(forecast: [Forecast]) {
-    
+    self.forecast = forecast
+    self.collectionView.reloadData()
   }
 
   func configure() {
@@ -47,4 +52,38 @@ import Foundation
     self.configure()
   }
 
+//MARK: - CollectionView Delegate/Datasource Method(s)
+  
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return self.forecast.count
+  }
+  
+  func forecast(indexPath: IndexPath) -> Forecast? {
+    let forecastItem = self.forecast[indexPath.row]
+    
+    return forecastItem
+  }
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    return CGSize(width: self.collectionView.bounds.size.width, height: CGFloat(self.collectionView.bounds.size.width))
+  }
+  
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let forecastItem = self.forecast(indexPath: indexPath)
+    
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastCell", for: indexPath) as? ForecastCell
+    
+    cell?.configure(forecast: forecastItem ?? Forecast())
+    
+    return cell ?? UICollectionViewCell()
+    
+  }
 }

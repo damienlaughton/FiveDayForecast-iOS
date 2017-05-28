@@ -41,7 +41,76 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-cT-nIx" userLabel="Weather Report View" customClass="UIWeatherReportView" customModule="racedayweather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="135" width="375" height="397"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-JT-XtZ">
+                                        <rect key="frame" x="10.5" y="21" width="355" height="355"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7qa-JT-XtZ" secondAttribute="height" multiplier="1:1" id="R2X-6D-1No"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZYf-Mb-CKz">
+                                            <size key="itemSize" width="355" height="355"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCell" id="ytg-oE-p39" customClass="ForecastCell" customModule="racedayweather" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="355"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="355"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AK-Ap-7UX">
+                                                            <rect key="frame" x="10" y="10" width="335" height="100"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAu-td-taq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="fAu-td-taq" secondAttribute="height" multiplier="67:20" id="eQA-nQ-Buw"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="fAu-td-taq" secondAttribute="trailing" id="6VM-MA-7cd"/>
+                                                                <constraint firstAttribute="width" secondItem="3AK-Ap-7UX" secondAttribute="height" multiplier="67:20" id="8vZ-Ue-f8u"/>
+                                                                <constraint firstItem="fAu-td-taq" firstAttribute="leading" secondItem="3AK-Ap-7UX" secondAttribute="leading" id="Mem-dt-aFo"/>
+                                                                <constraint firstItem="fAu-td-taq" firstAttribute="top" secondItem="3AK-Ap-7UX" secondAttribute="top" id="Q5e-hc-JHj"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="3AK-Ap-7UX" secondAttribute="trailing" constant="10" id="M3V-k5-NwT"/>
+                                                    <constraint firstItem="3AK-Ap-7UX" firstAttribute="top" secondItem="ytg-oE-p39" secondAttribute="top" constant="10" id="MbM-Hq-qge"/>
+                                                    <constraint firstItem="3AK-Ap-7UX" firstAttribute="leading" secondItem="ytg-oE-p39" secondAttribute="leading" constant="10" id="ZnV-gy-Rym"/>
+                                                </constraints>
+                                                <size key="customSize" width="355" height="355"/>
+                                                <connections>
+                                                    <outlet property="dateLabel" destination="fAu-td-taq" id="DIh-ol-VBb"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wUN-cT-nIx" id="8Mx-Yw-Adf"/>
+                                            <outlet property="delegate" destination="wUN-cT-nIx" id="KlE-r3-81h"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7qa-JT-XtZ" firstAttribute="width" secondItem="wUN-cT-nIx" secondAttribute="width" multiplier="0.9466" id="Fpi-gJ-HbZ"/>
+                                    <constraint firstItem="7qa-JT-XtZ" firstAttribute="centerY" secondItem="wUN-cT-nIx" secondAttribute="centerY" id="OWJ-ur-Q90"/>
+                                    <constraint firstItem="7qa-JT-XtZ" firstAttribute="centerX" secondItem="wUN-cT-nIx" secondAttribute="centerX" id="VUx-xV-c9I"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="collectionView" destination="7qa-JT-XtZ" id="vYZ-2J-FcX"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-oV-WgT" userLabel="Page Control Container">
                                 <rect key="frame" x="0.0" y="532" width="375" height="45"/>
