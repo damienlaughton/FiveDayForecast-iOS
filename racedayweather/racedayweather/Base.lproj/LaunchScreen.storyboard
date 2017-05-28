@@ -29,9 +29,6 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santa Pod Raceday Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ueN-GO-q3g">
                                 <rect key="frame" x="0.0" y="90" width="375" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ueN-GO-q3g" secondAttribute="height" multiplier="25:3" id="Kum-Bk-1T2"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
