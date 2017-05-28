@@ -108,8 +108,8 @@
 		6DF57D7F1EDAB5ED002AA1CC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DF57D611EDAB254002AA1CC /* DidFinishLaunchingViewController.swift */,
 				6DF57D821EDABD54002AA1CC /* RootViewController.swift */,
+				6DF57D611EDAB254002AA1CC /* DidFinishLaunchingViewController.swift */,
 				6DF57D8A1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift */,
 			);
 			name = ViewControllers;

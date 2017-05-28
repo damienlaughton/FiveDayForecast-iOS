@@ -21,11 +21,24 @@ class DidFinishLaunchingViewController: RootViewController {
   override func configure() {
     super.configure()
     
+    self.preConfigureViews()
+    
     self.removeLogo(completionHandler: { _ in
       self.showWeatherReportView(completionHandler: { _ in
         self.showPageControl()
       })
     })
+  }
+  
+  func preConfigureViews() {
+  
+    guard let fivedayForecastLogoImageView = self.fivedayForecastLogoImageView else { return }
+    guard let pageControl = self.pageControl else { return }
+    guard let weatherReportView = self.weatherReportView else { return }
+    
+    fivedayForecastLogoImageView.alpha = 1.0
+    pageControl.alpha = 0.0
+    weatherReportView.alpha = 0.0
   }
   
   
