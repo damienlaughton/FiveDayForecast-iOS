@@ -42,6 +42,10 @@
                                     <constraint firstAttribute="width" secondItem="MND-3c-XXU" secondAttribute="height" multiplier="3:2" id="0xi-ka-pcD"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-cT-nIx" userLabel="Weather Report View" customClass="UIWeatherReportView" customModule="racedayweather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="135" width="375" height="397"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-oV-WgT" userLabel="Page Control Container">
                                 <rect key="frame" x="0.0" y="532" width="375" height="45"/>
                                 <subviews>
@@ -84,6 +88,7 @@
                             <constraint firstItem="F7Z-h0-uhH" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="8Na-ru-dOY"/>
                             <constraint firstItem="F7Z-h0-uhH" firstAttribute="top" secondItem="hDb-TK-gEA" secondAttribute="top" id="8cm-pM-us3"/>
                             <constraint firstAttribute="trailing" secondItem="soW-Ni-P3F" secondAttribute="trailing" id="9dW-Dg-e5y"/>
+                            <constraint firstItem="dPI-oV-WgT" firstAttribute="top" secondItem="wUN-cT-nIx" secondAttribute="bottom" id="9my-iv-ErK"/>
                             <constraint firstItem="soW-Ni-P3F" firstAttribute="top" secondItem="F7Z-h0-uhH" secondAttribute="bottom" id="9vb-hi-Ane"/>
                             <constraint firstItem="MND-3c-XXU" firstAttribute="centerY" secondItem="hDb-TK-gEA" secondAttribute="centerY" id="Ela-y7-Jcd"/>
                             <constraint firstAttribute="trailing" secondItem="dPI-oV-WgT" secondAttribute="trailing" id="Hud-Aw-jFn"/>
@@ -95,14 +100,18 @@
                             <constraint firstItem="MND-3c-XXU" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="dN1-ne-xal"/>
                             <constraint firstItem="7ee-ne-AF2" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="eEr-Vh-5f8"/>
                             <constraint firstAttribute="trailing" secondItem="MND-3c-XXU" secondAttribute="trailing" id="ehb-wl-CX5"/>
+                            <constraint firstItem="wUN-cT-nIx" firstAttribute="top" secondItem="soW-Ni-P3F" secondAttribute="bottom" id="hgT-1Q-nX1"/>
                             <constraint firstItem="dPI-oV-WgT" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="jGR-Dw-fZR"/>
+                            <constraint firstAttribute="trailing" secondItem="wUN-cT-nIx" secondAttribute="trailing" id="mYK-Z0-A8o"/>
                             <constraint firstItem="soW-Ni-P3F" firstAttribute="height" secondItem="hDb-TK-gEA" secondAttribute="height" multiplier="0.0674" id="q4X-Ex-z9N"/>
+                            <constraint firstItem="wUN-cT-nIx" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="sBm-Qn-gX1"/>
                             <constraint firstItem="F7Z-h0-uhH" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="wsN-Bq-eQG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fivedayForecastLogoImageView" destination="MND-3c-XXU" id="f2J-ij-1Cs"/>
                         <outlet property="pageControl" destination="rqt-gm-jbz" id="0sO-eR-I3f"/>
+                        <outlet property="weatherReportView" destination="wUN-cT-nIx" id="YYE-7K-I1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLj-4V-okd" userLabel="First Responder" sceneMemberID="firstResponder"/>

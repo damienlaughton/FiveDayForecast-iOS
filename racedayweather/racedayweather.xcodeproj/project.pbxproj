@@ -15,6 +15,8 @@
 		6DF57D751EDAB255002AA1CC /* racedayweatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D741EDAB255002AA1CC /* racedayweatherTests.swift */; };
 		6DF57D831EDABD54002AA1CC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D821EDABD54002AA1CC /* RootViewController.swift */; };
 		6DF57D851EDABEDB002AA1CC /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D841EDABEDB002AA1CC /* GlobalDefinitions.swift */; };
+		6DF57D891EDAC534002AA1CC /* UIWeatherReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D881EDAC534002AA1CC /* UIWeatherReportView.swift */; };
+		6DF57D8B1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF57D8A1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		6DF57D761EDAB255002AA1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF57D821EDABD54002AA1CC /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		6DF57D841EDABEDB002AA1CC /* GlobalDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefinitions.swift; sourceTree = "<group>"; };
+		6DF57D881EDAC534002AA1CC /* UIWeatherReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWeatherReportView.swift; sourceTree = "<group>"; };
+		6DF57D8A1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DidFinishLaunching+Animation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		6DF57D531EDAB254002AA1CC = {
 			isa = PBXGroup;
 			children = (
+				6DF57D861EDAC477002AA1CC /* CustomInterfaces */,
 				6DF57D811EDABC2B002AA1CC /* Assets */,
 				6DF57D801EDAB604002AA1CC /* Storyboards */,
 				6DF57D7F1EDAB5ED002AA1CC /* ViewControllers */,
@@ -105,6 +110,7 @@
 			children = (
 				6DF57D611EDAB254002AA1CC /* DidFinishLaunchingViewController.swift */,
 				6DF57D821EDABD54002AA1CC /* RootViewController.swift */,
+				6DF57D8A1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -126,6 +132,23 @@
 			);
 			name = Assets;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		6DF57D861EDAC477002AA1CC /* CustomInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				6DF57D871EDAC48A002AA1CC /* UIWeatherReportView */,
+			);
+			name = CustomInterfaces;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6DF57D871EDAC48A002AA1CC /* UIWeatherReportView */ = {
+			isa = PBXGroup;
+			children = (
+				6DF57D881EDAC534002AA1CC /* UIWeatherReportView.swift */,
+			);
+			name = UIWeatherReportView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +259,8 @@
 				6DF57D621EDAB254002AA1CC /* DidFinishLaunchingViewController.swift in Sources */,
 				6DF57D601EDAB254002AA1CC /* AppDelegate.swift in Sources */,
 				6DF57D831EDABD54002AA1CC /* RootViewController.swift in Sources */,
+				6DF57D8B1EDAC652002AA1CC /* DidFinishLaunching+Animation.swift in Sources */,
+				6DF57D891EDAC534002AA1CC /* UIWeatherReportView.swift in Sources */,
 				6DF57D851EDABEDB002AA1CC /* GlobalDefinitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

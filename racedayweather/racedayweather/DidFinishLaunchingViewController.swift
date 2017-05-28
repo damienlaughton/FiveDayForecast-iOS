@@ -10,36 +10,22 @@ import UIKit
 
 class DidFinishLaunchingViewController: RootViewController {
   
-  
   @IBOutlet weak var fivedayForecastLogoImageView: UIImageView!
   @IBOutlet weak var pageControl: UIPageControl!
+  @IBOutlet weak var weatherReportView: UIWeatherReportView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    self.removeLogo()
   }
   
-  //MARK:- Animation Method(s)
-  
-  func removeLogo(animated: Bool = true, completionHandler: @escaping AnimationCompletionHandler = { _ in }) {
+  override func configure() {
+    super.configure()
     
-    guard let fivedayForecastLogoImageView = self.fivedayForecastLogoImageView else { return }
-    
-    if (!animated) {
-      fivedayForecastLogoImageView.alpha = 0.0
-      completionHandler(true)
-      return
-    }
-    
-    UIView.animate(withDuration:0.3, delay: 0.0, options: .curveEaseInOut,
-                   animations: {
-                    fivedayForecastLogoImageView.alpha = 0.0
-    },
-                   completion: { finished in
-                    completionHandler(true)
+    self.removeLogo(completionHandler: { _ in
+      self.showWeatherReportView(completionHandler: { _ in
+        self.showPageControl()
+      })
     })
-    
   }
   
   
