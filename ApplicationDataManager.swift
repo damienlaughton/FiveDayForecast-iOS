@@ -78,15 +78,14 @@ public class ApplicationDataManager {
         }
         
         if (lastForecastItem.isEmpty()) {
-          lastForecastItem.date = date
-          lastForecastItem.append(temperature: temperature, description: description)
-        } else if (Calendar.current.isDate(date, inSameDayAs:lastForecastItem.date)) {
-          lastForecastItem.append(temperature: temperature, description: description)
+          lastForecastItem.append(date: date, temperature: temperature, description: description)
+        } else if (lastForecastItem.isSameDate(date: date)) {
+          lastForecastItem.append(date: date, temperature: temperature, description: description)
         } else {
           forecast.append(lastForecastItem)
           lastForecastItem = Forecast()
-          lastForecastItem.date = date
-          lastForecastItem.append(temperature: temperature, description: description)
+          
+          lastForecastItem.append(date: date, temperature: temperature, description: description)
         }
         
       }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Forecast {
-  var date:Date = Date()
+  var dates:[Date] = []
   var temperatures:[Double] = []
   var descriptions:[String] = []
   
@@ -23,8 +23,49 @@ struct Forecast {
     return isEmpty
   }
   
-  mutating func append(temperature: Double, description: String) {
+  mutating func append(date: Date, temperature: Double, description: String) {
+    self.dates.append(date)
     self.temperatures.append(temperature)
     self.descriptions.append(description)
+  }
+  
+  func isSameDate(date: Date) -> Bool {
+    var isSameDate = false
+    
+    if (self.dates.count > 0) {
+      if let currentDate = self.dates.first {
+    
+        isSameDate = (Calendar.current.isDate(date, inSameDayAs:currentDate))
+      }
+    }
+    return isSameDate;
+  }
+  
+  func dateDescription() -> String {
+    if let date = self.dates.first {
+      return DateManagerSingleton.sharedInstance.formatter_ddMMYY().string(from: date)
+    }
+    
+    return ""
+  }
+  
+  func temperatureDescription(index:Int) -> String {
+    if (index > self.dates.count - 1) {
+      return ""
+    }
+    
+    let time = DateManagerSingleton.sharedInstance.formatter_ddMMYY().string(from: self.dates[index])
+
+    let formatter = MeasurementFormatter()
+    formatter.locale = Locale(identifier: "en_GB")
+    let measurement = Measurement(value: self.temperatures[index], unit: UnitTemperature.celsius)
+    let temperature = formatter.string(from: measurement)
+    
+    let description = self.descriptions[index]
+    
+    let temperatureDescription = "\(time) \(temperature) \(description)"
+    
+    return temperatureDescription
+    
   }
 }

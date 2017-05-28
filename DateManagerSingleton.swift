@@ -32,25 +32,11 @@ public class DateManagerSingleton {
     return formatter_ddMMYY
   }
   
-  func formatter_ddMMyyyy_HHmmss () -> DateFormatter {
-    let formatter_ddMMyyyy_HHmmss = DateManagerSingleton.formatter
-    formatter_ddMMyyyy_HHmmss.dateFormat = "dd/MM/yyyy HH:mm:ss"
+  func formatter_HHmm () -> DateFormatter {
+    let formatter_HHmm = DateManagerSingleton.formatter
+    formatter_HHmm.dateFormat = "HH:mm"
     
-    return formatter_ddMMyyyy_HHmmss
-  }
-  
-  func formatter_yyyyMMdd_HHmmss () -> DateFormatter {
-    let formatter_yyyyMMdd_HHmmss = DateManagerSingleton.formatter
-    formatter_yyyyMMdd_HHmmss.dateFormat = "yyyyMMdd_HHmmss"
-    
-    return formatter_yyyyMMdd_HHmmss
-  }
-  
-  func formatter_ddMMyyyy_HHmm () -> DateFormatter {
-    let formatter_ddMMyyyy_HHmm = DateManagerSingleton.formatter
-    formatter_ddMMyyyy_HHmm.dateFormat = "dd/MM/yyyy HH:mm"
-    
-    return formatter_ddMMyyyy_HHmm
+    return formatter_HHmm
   }
   
 }

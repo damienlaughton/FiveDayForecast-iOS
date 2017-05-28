@@ -22,10 +22,7 @@ class ForecastCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSo
   
     self.forecast = forecast
   
-    let datetext = DateManagerSingleton.sharedInstance.formatter_ddMMYY().string(from: forecast.date)
-    self.dateLabel.text = datetext
-    
-    
+    self.dateLabel.text = self.forecast?.dateDescription()
     
     self.tableView.reloadData()
     
@@ -37,7 +34,7 @@ class ForecastCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSo
   
     let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastDetailTableViewCell", for: indexPath)
     
-    cell.textLabel?.text = "some text"
+    cell.textLabel?.text = self.forecast?.temperatureDescription(index: indexPath.row)
     
     return cell
   }
