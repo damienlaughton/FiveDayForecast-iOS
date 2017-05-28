@@ -9,12 +9,56 @@
 import UIKit
 import Foundation
 
-class ForecastCell: UICollectionViewCell {
+class ForecastCell: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
+  
+
+  var forecast: Forecast?
+  
   
   func configure(forecast: Forecast) {
+  
+    self.forecast = forecast
+  
     let datetext = DateManagerSingleton.sharedInstance.formatter_ddMMYY().string(from: forecast.date)
     self.dateLabel.text = datetext
+    
+    
+    
+    self.tableView.reloadData()
+    
   }
+  
+  //MARK:- UITableViewDelegate/DataSource Method(s)
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastDetailTableViewCell", for: indexPath)
+    
+    cell.textLabel?.text = "some text"
+    
+    return cell
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    var numberOfRows = 0
+    
+    if let _forecast = self.forecast {
+      numberOfRows = _forecast.temperatures.count
+    }
+    
+    return numberOfRows
+ }
+  
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.tableView.deselectRow(at: indexPath, animated: false)
+  }
+
 }
