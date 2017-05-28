@@ -8,18 +8,39 @@
 
 import UIKit
 
-class DidFinishLaunchingViewController: UIViewController {
-
+class DidFinishLaunchingViewController: RootViewController {
+  
+  
+  @IBOutlet weak var fivedayForecastLogoImageView: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.removeLogo()
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  //MARK:- Animation Method(s)
+  
+  func removeLogo(animated: Bool = true, completionHandler: @escaping AnimationCompletionHandler = { _ in }) {
+    
+    guard let fivedayForecastLogoImageView = self.fivedayForecastLogoImageView else { return }
+    
+    if (!animated) {
+      fivedayForecastLogoImageView.alpha = 0.0
+      completionHandler(true)
+      return
+    }
+    
+    UIView.animate(withDuration:0.3, delay: 0.0, options: .curveEaseInOut,
+                   animations: {
+                    fivedayForecastLogoImageView.alpha = 0.0
+    },
+                   completion: { finished in
+                    completionHandler(true)
+    })
+    
   }
-
-
+  
+  
 }
 

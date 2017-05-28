@@ -1,30 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZQg-aG-F0m">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Did Finish Launching View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hle-nC-F1J">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DidFinishLaunchingViewController" customModule="racedayweather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZQg-aG-F0m" customClass="DidFinishLaunchingViewController" customModule="racedayweather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="yWN-w9-KFU"/>
+                        <viewControllerLayoutGuide type="bottom" id="XwE-lg-1c7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="hDb-TK-gEA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7Z-h0-uhH" userLabel="Padding">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santa Pod Raceday Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="soW-Ni-P3F">
+                                <rect key="frame" x="0.0" y="90" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="25:3" id="Zn4-00-PvK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="FiveDayForecastLogo" translatesAutoresizingMaskIntoConstraints="NO" id="MND-3c-XXU">
+                                <rect key="frame" x="0.0" y="208.5" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MND-3c-XXU" secondAttribute="height" multiplier="3:2" id="0xi-ka-pcD"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-ne-AF2" userLabel="Bottom Container">
+                                <rect key="frame" x="0.0" y="577" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A five day weather forecast for Podington, Bedfordshire. The home of drag racing in the U.K." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4A8-AP-bqY">
+                                        <rect key="frame" x="19" y="0.0" width="337.5" height="90"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4A8-AP-bqY" firstAttribute="width" secondItem="7ee-ne-AF2" secondAttribute="width" multiplier="0.9" id="OKP-B7-PiG"/>
+                                    <constraint firstItem="4A8-AP-bqY" firstAttribute="centerX" secondItem="7ee-ne-AF2" secondAttribute="centerX" id="U5y-15-HMb"/>
+                                    <constraint firstItem="4A8-AP-bqY" firstAttribute="top" secondItem="7ee-ne-AF2" secondAttribute="top" id="Ykg-OD-MXw"/>
+                                    <constraint firstAttribute="bottom" secondItem="4A8-AP-bqY" secondAttribute="bottom" id="dsL-V6-hax"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="soW-Ni-P3F" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="3cL-DT-k3c"/>
+                            <constraint firstAttribute="trailing" secondItem="7ee-ne-AF2" secondAttribute="trailing" id="3rh-Pw-4wr"/>
+                            <constraint firstItem="F7Z-h0-uhH" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="8Na-ru-dOY"/>
+                            <constraint firstItem="F7Z-h0-uhH" firstAttribute="top" secondItem="hDb-TK-gEA" secondAttribute="top" id="8cm-pM-us3"/>
+                            <constraint firstAttribute="trailing" secondItem="soW-Ni-P3F" secondAttribute="trailing" id="9dW-Dg-e5y"/>
+                            <constraint firstItem="soW-Ni-P3F" firstAttribute="top" secondItem="F7Z-h0-uhH" secondAttribute="bottom" id="9vb-hi-Ane"/>
+                            <constraint firstItem="MND-3c-XXU" firstAttribute="centerY" secondItem="hDb-TK-gEA" secondAttribute="centerY" id="Ela-y7-Jcd"/>
+                            <constraint firstItem="7ee-ne-AF2" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="MhM-Cn-6rN"/>
+                            <constraint firstItem="XwE-lg-1c7" firstAttribute="top" secondItem="7ee-ne-AF2" secondAttribute="bottom" id="VJM-mw-HYU"/>
+                            <constraint firstAttribute="trailing" secondItem="F7Z-h0-uhH" secondAttribute="trailing" id="bQi-yq-jU2"/>
+                            <constraint firstItem="MND-3c-XXU" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="dN1-ne-xal"/>
+                            <constraint firstItem="7ee-ne-AF2" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="eEr-Vh-5f8"/>
+                            <constraint firstAttribute="trailing" secondItem="MND-3c-XXU" secondAttribute="trailing" id="ehb-wl-CX5"/>
+                            <constraint firstItem="soW-Ni-P3F" firstAttribute="height" secondItem="hDb-TK-gEA" secondAttribute="height" multiplier="0.0674" id="q4X-Ex-z9N"/>
+                            <constraint firstItem="F7Z-h0-uhH" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="wsN-Bq-eQG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fivedayForecastLogoImageView" destination="MND-3c-XXU" id="f2J-ij-1Cs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLj-4V-okd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-167" y="166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FiveDayForecastLogo" width="414" height="276"/>
+    </resources>
 </document>
