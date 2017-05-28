@@ -52,17 +52,20 @@ public class ApplicationDataManager {
   
     var forecast: [Forecast] = []
     
+    var lastForecastItem: Forecast = Forecast()
+    
     if let list = weather["list"] as? [JSON] {
     
 
       
       for listItem in list {
+      
         let timeInterval = listItem["dt"] as? TimeInterval ?? 0
         let date = Date(timeIntervalSince1970: timeInterval)
-        var temp = 0.0
+        var temperature = 0.0
         if let main = listItem["main"] as? JSON {
-          if let _temp = main["temp"] as? Double {
-            temp = _temp
+          if let _temperature = main["temp"] as? Double {
+            temperature = _temperature
           }
         }
         var description = ""
@@ -74,11 +77,22 @@ public class ApplicationDataManager {
           }
         }
         
-        let forecastItem = Forecast(date: date, temp: temp, description: description)
-        
-        forecast.append(forecastItem)
+        if (lastForecastItem.isEmpty()) {
+          lastForecastItem.date = date
+          lastForecastItem.append(temperature: temperature, description: description)
+        } else if (Calendar.current.isDate(date, inSameDayAs:lastForecastItem.date)) {
+          lastForecastItem.append(temperature: temperature, description: description)
+        } else {
+          forecast.append(lastForecastItem)
+          lastForecastItem = Forecast()
+          lastForecastItem.date = date
+          lastForecastItem.append(temperature: temperature, description: description)
+        }
         
       }
+      
+      forecast.append(lastForecastItem)
+      
     }
   
     return forecast
