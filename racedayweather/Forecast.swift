@@ -54,7 +54,7 @@ struct Forecast {
       return ""
     }
     
-    let time = DateManagerSingleton.sharedInstance.formatter_ddMMYY().string(from: self.dates[index])
+    let time = DateManagerSingleton.sharedInstance.formatter_HHmm().string(from: self.dates[index])
 
     let formatter = MeasurementFormatter()
     formatter.locale = Locale(identifier: "en_GB")
