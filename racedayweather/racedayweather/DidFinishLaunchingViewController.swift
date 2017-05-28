@@ -16,6 +16,29 @@ class DidFinishLaunchingViewController: RootViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    APIManagerSingleton.sharedInstance.performFiveDayForecast(cityName: "Podington") { [unowned self] data, response, error in
+      DispatchQueue.main.async {
+      
+        print("\(self)")
+        let validStatusCode = response?.isValidStatusCode() ?? false
+        
+        if (nil != error) {
+          //error clause
+          print(error)
+        } else if (false == validStatusCode) {
+          // invalid server status
+        } else {
+          //we're good
+          
+          guard let json = data?.json() else { return }
+          
+          print(json)
+          
+        }
+      }
+    }
+
   }
   
   override func configure() {
