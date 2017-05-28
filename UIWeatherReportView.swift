@@ -9,9 +9,16 @@
 import UIKit
 import Foundation
 
+protocol UIWeatherReportViewDelegate: class {
+  func forecastDisplayed(index: Int)
+}
+
+
 @IBDesignable class UIWeatherReportView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  
+  weak var delegate: UIWeatherReportViewDelegate?
 
   var forecast:[Forecast] = []
 
@@ -85,5 +92,9 @@ import Foundation
     
     return cell ?? UICollectionViewCell()
     
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    self.delegate?.forecastDisplayed(index: indexPath.row)
   }
 }

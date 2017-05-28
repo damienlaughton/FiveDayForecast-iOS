@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DidFinishLaunchingViewController: RootViewController {
+class DidFinishLaunchingViewController: RootViewController, UIWeatherReportViewDelegate {
   
   @IBOutlet weak var fivedayForecastLogoImageView: UIImageView!
   @IBOutlet weak var pageControl: UIPageControl!
@@ -28,6 +28,8 @@ class DidFinishLaunchingViewController: RootViewController {
   override func configure() {
     super.configure()
     
+    self.weatherReportView.delegate = self
+    
     self.weatherReportView.configure(forecast: ApplicationDataManager.sharedInstance.VM_latestWeatherForSantaPad)
     
     self.preConfigureViews()
@@ -43,8 +45,10 @@ class DidFinishLaunchingViewController: RootViewController {
   
     if let newForecast = note.object as? [Forecast] {
       self.weatherReportView.configure(forecast: newForecast)
+      self.pageControl.numberOfPages = newForecast.count
     } else {
        self.weatherReportView.configure(forecast: ApplicationDataManager.sharedInstance.VM_latestWeatherForSantaPad)
+       self.pageControl.numberOfPages = ApplicationDataManager.sharedInstance.VM_latestWeatherForSantaPad.count
     }
   }
   
@@ -59,6 +63,11 @@ class DidFinishLaunchingViewController: RootViewController {
     weatherReportView.alpha = 0.0
   }
   
+  //MARK:- UIWeatherReportViewDelegate
+  
+  func forecastDisplayed(index: Int) {
+    self.pageControl.currentPage = index
+  }
   
 }
 
