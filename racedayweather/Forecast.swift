@@ -9,5 +9,7 @@
 import Foundation
 
 struct Forecast {
-  var temp:Float = 28.0
+  var date:Date = Date()
+  var temp:Double = 28.0
+  var description:String = ""
 }

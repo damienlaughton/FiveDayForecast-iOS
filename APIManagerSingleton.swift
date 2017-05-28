@@ -23,7 +23,7 @@ public class APIManagerSingleton {
   func performRequest(url: String, httpMethod: String, httpBodyParameters: JSON? = .none, headerParameters: JSON? = .none, completion: @escaping APICompletionHandler) {
   
     // bd8c011cc1437bb97815745edcece6d1 - appid
-    let urlWithExtraParameters = "\(url)&mode=json&appid=bd8c011cc1437bb97815745edcece6d1"
+    let urlWithExtraParameters = "\(url)&mode=json&units=metric&appid=bd8c011cc1437bb97815745edcece6d1"
     
     guard let requestURL = URL(string: urlWithExtraParameters) else { return }
     

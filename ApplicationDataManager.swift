@@ -13,11 +13,11 @@ public class ApplicationDataManager {
   static let sharedInstance = ApplicationDataManager()
   
   var VM_latestWeatherForSantaPad: [Forecast] {
-      let temp: [Forecast] = self.forecasts(weather: self.latestWeatherForSantaPod)
+      let temp: [Forecast] = self.forecast(weather: self.latestWeatherForSantaPod)
       return temp
   }
   
-  var latestWeatherForSantaPod: JSON = [:] {
+  private var latestWeatherForSantaPod: JSON = [:] {
     didSet {
       NotificationCenter.default.post(name: .WeatherInformationUpdated, object: self.VM_latestWeatherForSantaPad)
     }
@@ -48,8 +48,40 @@ public class ApplicationDataManager {
     }
   }
   
-  private func forecasts(weather: JSON) -> [Forecast] {
-    return []
+  private func forecast(weather: JSON) -> [Forecast] {
+  
+    var forecast: [Forecast] = []
+    
+    if let list = weather["list"] as? [JSON] {
+    
+
+      
+      for listItem in list {
+        let timeInterval = listItem["dt"] as? TimeInterval ?? 0
+        let date = Date(timeIntervalSince1970: timeInterval)
+        var temp = 0.0
+        if let main = listItem["main"] as? JSON {
+          if let _temp = main["temp"] as? Double {
+            temp = _temp
+          }
+        }
+        var description = ""
+        if let weather = listItem["weather"] as? [JSON] {
+          if let _weatherZero = weather.first {
+            let _weatherMain = _weatherZero["main"] as? String ?? ""
+            let _weatherDescription = _weatherZero["description"] as? String ?? ""
+            description = "\(_weatherMain) (\(_weatherDescription))"
+          }
+        }
+        
+        let forecastItem = Forecast(date: date, temp: temp, description: description)
+        
+        forecast.append(forecastItem)
+        
+      }
+    }
+  
+    return forecast
   }
 
 }
