@@ -42,6 +42,22 @@
                                     <constraint firstAttribute="width" secondItem="MND-3c-XXU" secondAttribute="height" multiplier="3:2" id="0xi-ka-pcD"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-oV-WgT" userLabel="Page Control Container">
+                                <rect key="frame" x="0.0" y="532" width="375" height="45"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="rqt-gm-jbz">
+                                        <rect key="frame" x="19" y="4" width="337.5" height="37"/>
+                                        <color key="pageIndicatorTintColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.74509803919999995" green="0.1960784314" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rqt-gm-jbz" firstAttribute="centerY" secondItem="dPI-oV-WgT" secondAttribute="centerY" id="6Kv-AG-XlU"/>
+                                    <constraint firstItem="rqt-gm-jbz" firstAttribute="width" secondItem="dPI-oV-WgT" secondAttribute="width" multiplier="0.9" id="OeM-eT-HXS"/>
+                                    <constraint firstItem="rqt-gm-jbz" firstAttribute="centerX" secondItem="dPI-oV-WgT" secondAttribute="centerX" id="mbs-4S-eig"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ee-ne-AF2" userLabel="Bottom Container">
                                 <rect key="frame" x="0.0" y="577" width="375" height="90"/>
                                 <subviews>
@@ -70,23 +86,28 @@
                             <constraint firstAttribute="trailing" secondItem="soW-Ni-P3F" secondAttribute="trailing" id="9dW-Dg-e5y"/>
                             <constraint firstItem="soW-Ni-P3F" firstAttribute="top" secondItem="F7Z-h0-uhH" secondAttribute="bottom" id="9vb-hi-Ane"/>
                             <constraint firstItem="MND-3c-XXU" firstAttribute="centerY" secondItem="hDb-TK-gEA" secondAttribute="centerY" id="Ela-y7-Jcd"/>
+                            <constraint firstAttribute="trailing" secondItem="dPI-oV-WgT" secondAttribute="trailing" id="Hud-Aw-jFn"/>
                             <constraint firstItem="7ee-ne-AF2" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="MhM-Cn-6rN"/>
+                            <constraint firstItem="dPI-oV-WgT" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" id="PTS-fG-EMd"/>
+                            <constraint firstItem="7ee-ne-AF2" firstAttribute="top" secondItem="dPI-oV-WgT" secondAttribute="bottom" id="Q0S-d3-ePE"/>
                             <constraint firstItem="XwE-lg-1c7" firstAttribute="top" secondItem="7ee-ne-AF2" secondAttribute="bottom" id="VJM-mw-HYU"/>
                             <constraint firstAttribute="trailing" secondItem="F7Z-h0-uhH" secondAttribute="trailing" id="bQi-yq-jU2"/>
                             <constraint firstItem="MND-3c-XXU" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="dN1-ne-xal"/>
                             <constraint firstItem="7ee-ne-AF2" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="eEr-Vh-5f8"/>
                             <constraint firstAttribute="trailing" secondItem="MND-3c-XXU" secondAttribute="trailing" id="ehb-wl-CX5"/>
+                            <constraint firstItem="dPI-oV-WgT" firstAttribute="leading" secondItem="hDb-TK-gEA" secondAttribute="leading" id="jGR-Dw-fZR"/>
                             <constraint firstItem="soW-Ni-P3F" firstAttribute="height" secondItem="hDb-TK-gEA" secondAttribute="height" multiplier="0.0674" id="q4X-Ex-z9N"/>
                             <constraint firstItem="F7Z-h0-uhH" firstAttribute="height" secondItem="soW-Ni-P3F" secondAttribute="height" multiplier="2" id="wsN-Bq-eQG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fivedayForecastLogoImageView" destination="MND-3c-XXU" id="f2J-ij-1Cs"/>
+                        <outlet property="pageControl" destination="rqt-gm-jbz" id="0sO-eR-I3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLj-4V-okd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="166"/>
+            <point key="canvasLocation" x="-167.19999999999999" y="165.06746626686657"/>
         </scene>
     </scenes>
     <resources>

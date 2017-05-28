@@ -12,6 +12,7 @@ class DidFinishLaunchingViewController: RootViewController {
   
   
   @IBOutlet weak var fivedayForecastLogoImageView: UIImageView!
+  @IBOutlet weak var pageControl: UIPageControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
