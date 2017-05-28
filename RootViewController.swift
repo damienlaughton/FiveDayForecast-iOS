@@ -8,15 +8,15 @@
 
 import UIKit
 
-@IBDesignable class RootViewController: UIViewController {
-  override func viewDidLoad() {
+@IBDesignable public class RootViewController: UIViewController {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
     self.configure()
   }
   
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
